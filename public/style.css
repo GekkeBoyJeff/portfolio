@@ -1,22 +1,27 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: system-ui;
   list-style: none;
   color: var(--font-color);
   text-decoration: none;
   transition: .5s;
 }
 
-:root{
+img {
+  width: 100%;
+  background: var(--primary-color);
+}
+
+:root {
   --primary-color: #5957d6;
   --primary-darker-color: #23272d;
   --secondary-color: #ff6b81;
   --white-color: #ffffff;
   --black-color: #151618;
   --gray-color: #f9f9f9;
-  --font-color:#ffffff;
+  --font-color: #ffffff;
 }
 
 body {
@@ -24,10 +29,10 @@ body {
   background: var(--black-color);
 }
 
-body > header {
-position: absolute;
-left: -999999em;
-transform: scale(.0000001);
+body>header {
+  position: absolute;
+  left: -999999em;
+  transform: scale(.0000001);
 }
 
 main {
@@ -39,39 +44,160 @@ main {
   margin: 0 auto;
 }
 
-main > section {
-    background: var(--primary-darker-color);
-    padding: 1em;
-    border-radius: .5em;
-    min-width: 18em;
+main>section:not(:first-of-type, :nth-of-type(2)) {
+  background: var(--primary-darker-color);
+  padding: 1em;
+  border-radius: .5em;
+  min-width: 18em;
 }
 
-main > section:first-of-type, main > section:nth-of-type(2) {
-    flex: 1 0 48%;
-    height: 50dvh;
+main>section:first-of-type,
+main>section:nth-of-type(2) {
+  flex: 1 0 48%;
+  display: flex;
 }
 
-main > section:nth-of-type(3) {
-    flex: 1 0 58%;
+main>section:nth-of-type(3) {
+  flex: 1 0 58%;
 }
 
-main > section:nth-of-type(4) {
-    flex: 1 0 40%;
+main>section:nth-of-type(4) {
+  flex: 1 0 40%;
 }
 
-main > section:nth-of-type(3), main > section:nth-of-type(4) {
-    height: 42dvh;
+main>section:nth-of-type(3),
+main>section:nth-of-type(4) {
+  height: 23em;
+}
+
+.background {
+  background: var(--primary-darker-color);
+  padding: 1em;
+  border-radius: .5em;
+  position: relative;
+}
+
+.background a {
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+  background: var(--primary-color);
+  padding: .5em;
+  border-radius: .5em;
+}
+
+main>section:first-of-type>ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  /* height: inherit; */
+  text-align: center;
+  align-items: start;
+  margin-top: 1em;
+}
+
+section {
+  overflow: hidden;
+  border-radius: .5em;
+}
+
+main>section:first-of-type {
+  flex-direction: column;
+}
+
+main>section:first-of-type>ul li {
+  background: var(--primary-color);
+  flex: 1 0 27%;
+  height: 8em;
+  border-radius: .5em;
+  display: inherit;
+  align-items: center;
+  justify-content: center;
+  padding: .5em;
+}
+
+main>section:first-of-type>ul li:first-of-type {
+  filter: invert(1) saturate(0.7);
+}
+
+main>section:first-of-type>ul li:nth-of-type(2) {
+  filter: hue-rotate(105deg) saturate(0.7);
+}
+
+main>section:first-of-type>ul li:last-of-type {
+  filter: hue-rotate(305deg) saturate(0.7);
+}
+
+section:nth-of-type(2) {
+  flex-direction: row;
+  gap: 1em;
+}
+
+main>section:nth-of-type(2) h2 {
+  position: absolute;
+  transform: scale(0);
+  left: -999999999999999999em;
+}
+
+main>section:nth-of-type(2) figure,
+main>section:nth-of-type(2) ul {
+  height: 100%;
+  display: inherit;
+  flex-direction: column;
+  gap: 1em;
+  border-radius: .5em;
+  overflow: hidden;
+}
+
+main>section:nth-of-type(2) ul li {
+  background: var(--primary-darker-color);
+  border-radius: .5em;
+  min-height: 4em;
+  width: 100%;
+  display: inherit;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  flex-wrap: wrap;
+}
+
+main>section:nth-of-type(2) figure {
+  flex: 1 0 37%;
+}
+
+main>section:nth-of-type(2) figure img {
+  height: 100%;
+  display: flex;
+  object-fit: cover;
+}
+
+main>section:nth-of-type(2) figure figcaption {
+  display: none;
+}
+
+
+main>section:nth-of-type(2) ul {
+  flex: 1 1 59%;
+}
+
+main>section:nth-of-type(2)>ul li p:first-of-type {
+  font-weight: 300;
+  color: var(--gray-color);
+}
+
+main>section:nth-of-type(2)>ul li p:last-of-type {
+  font-weight: bold;
 }
 
 @media (prefers-color-scheme: light) {
-:root {
-  --primary-color: #5957d6;
-  --primary-darker-color: #dedede;
-  --secondary-color: #ff6b81;
-  
-  --black-color: #ffffff;
-  --white-color: #151618;
-  --gray-color: #f9f9f9;
-  --font-color:#151618;
-}
+  :root {
+    --primary-color: #5957d6;
+    --primary-darker-color: #dedede;
+    --secondary-color: #ff6b81;
+
+    --black-color: #ffffff;
+    --white-color: #151618;
+    --gray-color: #f9f9f9;
+    --font-color: #151618;
+  }
 }
