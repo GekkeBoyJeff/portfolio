@@ -1,6 +1,5 @@
-type quotesArray = string[];
 
-const quotes: quotesArray=[
+export const quotes = [
     `Omdat mijn code niet alleen werkt, maar ook van je houdt. ❤️`,
     `Ik breng de term "user-friendly" naar een heel nieuw niveau. 🙌`,
     `Ik ben de persoon die je zoekt als je graag pixel-perfect werk aflevert. 👌`,
@@ -32,7 +31,8 @@ const quotes: quotesArray=[
     `Met mij als web developer, kun je achterover leunen en ontspannen - ik zorg voor alles! 😌💻`,
     `Ik ben de web developer die je website verdient! 🎖️💻`
 ];
-
-export{}
-
 console.log(quotes[Math.floor(Math.random() * quotes.length)]);
+
+// change the h2 of the first section to a random quote
+let h2 = document.querySelector('.background blockquote p') as HTMLHeadingElement;
+h2.insertAdjacentHTML(`afterbegin`, quotes[Math.floor(Math.random() * quotes.length)]) ;
