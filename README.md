@@ -43,3 +43,39 @@ During the lecture I noted a a few things which are required for this project
 2. What data is in the github api?
 3. What data is missing?
 4. What data do I want to add?
+
+After adding custom images to load I came to the conclusion that I did not want to do that for every repo I had. Currently I had the following code to show 
+```TS
+interface Repository {
+  name?: string;
+  description?: string;
+  url?: string;
+}
+
+export async function fetchAllRepositories(username: string): Promise<Repository[]> {
+  const response = await fetch(`https://api.github.com/users/${username}/repos`);
+
+  if (!response.ok) {
+    throw new Error(`Failed to fetch repositories: ${response.status} ${response.statusText}`);
+  }
+
+  const data: Repository[] = await response.json();
+  console.log(data)
+    return data;
+}
+
+export async function addThreeLatestRepos(username:string) {
+  const formattedData = await fetchAllRepositories(username);
+  
+  for (let i = 0; i < formattedData.length && i < 3; i++) {
+    const element = document.querySelector(`section:nth-of-type(3) > a:nth-of-type(${i + 1}) figure figcaption h3`);
+    const image = document.querySelector(`section:nth-of-type(3) > a:nth-of-type(${i + 1}) figure img`);
+    if (element !== null) {
+      element.textContent = formattedData[i].name!;
+      image?.setAttribute('src', `https://raw.githubusercontent.com/${username}/${formattedData[i].name}/main/assets/mockup-small.webp`);
+    }
+  }
+}
+```
+
+However, this only returned the three latest repo's. I wanted the three pinned repo's.
