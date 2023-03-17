@@ -66,10 +66,13 @@ export async function addThreeLatestRepos(username: string, pinnedRepos: Reposit
 // Make a new fetch request to the Github API to get the data for the current repository
 export async function fetchCurrentRepository(username: string, repo: string) {
   try {
+    const section6 = document.querySelector('section:nth-of-type(6) > div')!;
+    section6.innerHTML = '';
     const response = await fetch(`https://api.github.com/repos/${username}/${repo}`);
     const data: Repository = await response.json();
     fetchReadme(username, repo)
     handleRepo([data])// wrap the data in an array
+    section6?.insertAdjacentHTML('beforebegin', `<img src="https://raw.githubusercontent.com/${username}/${repo}/main/assets/mockup.webp" alt="Mockup of ${repo}">`);
   } catch(e){
     console.log(e);
   }

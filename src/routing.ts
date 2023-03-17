@@ -19,7 +19,6 @@ export async function router() {
             break;
         case '#projects':
             fetchAllRepositories('GekkeBoyJeff');
-
             checkForItems();
             if (parts.length > 1) {
                 const page: string = parts[1];

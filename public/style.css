@@ -108,7 +108,7 @@ body:has(main:hover)::after {
 
 main:hover {
   --primary-color: #0a70d9;
-  filter: drop-shadow(0 0 97em var(--primary-color));
+  /* filter: drop-shadow(0 0 97em var(--primary-color)); */
 }
 
 main:hover section:first-of-type ul {
@@ -735,6 +735,7 @@ pre code {
 
 section:nth-of-type(6) {
   max-width: 100vw;
+  flex-direction: column;
 }
 
 footer {
@@ -786,4 +787,24 @@ main>section:nth-of-type(2) ul li:nth-of-type(2):hover a img {
 
 .noGrid main section:nth-of-type(6)>div {
   display: grid;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  --primary-color: #0a70d9;
+  background: radial-gradient(circle, var(--primary-color) 0%, rgba(255, 255, 255, 0) 107%);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0;
+  transition: .5s;
+}
+
+body:has(main:hover)::before {
+  opacity: 100%;
+}
+
+.noGrid main section:nth-of-type(5) ul:first-of-type {
+  display: none;
 }
