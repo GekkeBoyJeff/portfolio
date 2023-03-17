@@ -646,6 +646,8 @@ body main:has(section:nth-of-type(5).hide) section:nth-of-type(6).hide {
 main:has(section#projects:target) section:nth-of-type(5) {
   display: flex;
   background: unset !important;
+  flex-wrap: wrap;
+  gap: 0em 1em;
 }
 
 main:has(section#projects:target) section:nth-of-type(6) {
@@ -706,7 +708,7 @@ main section:nth-of-type(5) ul li a:hover img {
 
 .noGrid main section:nth-of-type(5) {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .noGrid main section:nth-of-type(7) p,
@@ -776,6 +778,7 @@ main>section:nth-of-type(2) ul li:nth-of-type(2):hover a img {
   flex: 1 1 15em;
   background: var(--black-color);
   aspect-ratio: 1;
+  position: relative;
 }
 
 .noGrid main section:nth-of-type(5) ul li a {
@@ -783,6 +786,27 @@ main>section:nth-of-type(2) ul li:nth-of-type(2):hover a img {
   height: 100%;
   display: grid;
   place-content: center;
+}
+
+.noGrid main section:nth-of-type(5) ul li:hover a {
+  transform: scale(1.05);
+  background: var(--primary-color);
+}
+
+.noGrid main section:nth-of-type(5) ul li:hover a::after {
+  transform: translate(0);
+}
+
+.noGrid main section:nth-of-type(5) ul li a::after {
+  content: 'Open';
+  position: absolute;
+  bottom: 1.5em;
+  right: 1.5em;
+  transform: translateX(10em);
+  transition: .5s;
+  background: rgb(0 0 0 / .5);
+  padding: 1em 2em;
+  border-radius: .5em;
 }
 
 .noGrid main section:nth-of-type(6)>div {
@@ -807,4 +831,28 @@ body:has(main:hover)::before {
 
 .noGrid main section:nth-of-type(5) ul:first-of-type {
   display: none;
+}
+
+.noGrid main section:nth-of-type(6)>div>* {
+  margin-top: 1em;
+}
+
+.noGrid main section:nth-of-type(6)>div>p:has(>a) {
+  gap: 1em;
+}
+
+main:has(section#projects:target) section:nth-of-type(5)>a {
+  flex: 1 0 10vw;
+  display: grid;
+  place-content: center;
+  background: var(--primary-darker-color);
+  border-radius: .5em;
+}
+
+main:has(section#projects:target) section:nth-of-type(5) ul:nth-of-type(2) {
+  flex: 1 0 100%;
+}
+
+main:has(section#projects:target) section:nth-of-type(5) h2 {
+  flex: 1 0 80vw;
 }

@@ -6,16 +6,19 @@ import { checkForItems } from './pageViewer';
 export async function router() {
     const hash: string = window.location.hash; // Get the hash from the URL
     const parts: string[] = hash.split('/'); // Split the hash into an array of parts
-
+    
     if (hash === '') {
         window.location.hash = '#home';
     }
+
+    const section6 = document.querySelector('section:nth-of-type(6)')!;
 
     switch (parts[0]) {
         case '#home':
             console.log('home');
             fetchPinnedRepositories('GekkeBoyJeff');
             checkForItems();
+            section6.innerHTML = '<div></div>';
             break;
         case '#projects':
             fetchAllRepositories('GekkeBoyJeff');
@@ -26,6 +29,7 @@ export async function router() {
                 fetchCurrentRepository('GekkeBoyJeff', page);
             } else {
                 console.log('projects');
+                section6.innerHTML = '<div></div>';
             }
             break;
         default:
