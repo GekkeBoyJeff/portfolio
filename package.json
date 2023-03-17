@@ -9,17 +9,11 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "@types/whatwg-fetch": "^0.0.33",
     "typescript": "^4.9.3",
     "vite": "^4.1.0"
   },
   "dependencies": {
-    "@graphql-typed-document-node/core": "^3.1.2",
-    "@octokit/graphql": "^5.0.5",
-    "@types/node": "^18.15.3",
-    "dotenv": "^16.0.3",
-    "graphql": "^16.6.0",
-    "graphql-tag": "^2.12.6",
-    "whatwg-fetch": "^3.6.2"
+    "@types/showdown": "^2.0.0",
+    "showdown": "^2.1.0"
   }
 }

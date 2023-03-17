@@ -1,5 +1,7 @@
 import { getRandomQuote } from "./quotes";
-import { fetchPinnedRepositories } from "./fetch";
+// import { fetchPinnedRepositories } from "./fetch";
+import { router } from "./routing";
 
-fetchPinnedRepositories('GekkeBoyJeff');
 getRandomQuote();
+
+router();

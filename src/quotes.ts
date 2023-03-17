@@ -1,4 +1,4 @@
-export const quotes = [
+export const quotes:string[] = [
     `Omdat mijn code niet alleen werkt, maar ook van je houdt. ❤️`,
     `Ik breng de term "user-friendly" naar een heel nieuw niveau. 🙌`,
     `Ik ben de persoon die je zoekt als je graag pixel-perfect werk aflevert. 👌`,
