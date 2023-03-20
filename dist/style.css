@@ -842,7 +842,7 @@ body:has(main:hover)::before {
 }
 
 main:has(section#projects:target) section:nth-of-type(5)>a {
-  flex: 1 0 10vw;
+  flex: 0 0 15vw;
   display: grid;
   place-content: center;
   background: var(--primary-darker-color);
@@ -854,5 +854,5 @@ main:has(section#projects:target) section:nth-of-type(5) ul:nth-of-type(2) {
 }
 
 main:has(section#projects:target) section:nth-of-type(5) h2 {
-  flex: 1 0 80vw;
+  flex: 1 0 60vw;
 }

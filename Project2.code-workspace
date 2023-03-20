@@ -1,10 +1,17 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {
-		"liveServer.settings.port": 5501
-	}
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "../../../Betaalde projecten/aRanky-1"
+    },
+    {
+      "name": "PWA-portfolio",
+      "path": "../PWA-portfolio"
+    }
+  ],
+  "settings": {
+    "liveServer.settings.port": 5501
+  }
 }
