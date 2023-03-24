@@ -1,14 +1,17 @@
 {
   "folders": [
     {
-      "path": "."
-    },
-    {
       "path": "../../../Betaalde projecten/aRanky-1"
     },
     {
       "name": "PWA-portfolio",
       "path": "../PWA-portfolio"
+    },
+    {
+      "path": "."
+    },
+    {
+      "path": "../anquete"
     }
   ],
   "settings": {

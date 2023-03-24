@@ -136,16 +136,15 @@ main>section:nth-of-type(2) {
 }
 
 main>section:nth-of-type(3) {
-  flex: 1 0 68%;
+  flex: 1 0 38%;
 }
 
 main>section:nth-of-type(4) {
-  flex: 1 0 30%;
+  flex: 1 0 60%;
 }
 
 main>section:nth-of-type(3),
 main>section:nth-of-type(4) {
-  /* min-height: 16em; */
   height: initial;
   display: flex;
   flex-direction: row;
@@ -223,8 +222,8 @@ section {
 
 .noGrid main section {
   max-width: 80em;
-  flex: 1 1 45%;
-  min-width: 20em;
+  /* flex: 1 1 45%; */
+  /* min-width: 20em; */
 }
 
 main>section:first-of-type {
@@ -708,7 +707,6 @@ main section:nth-of-type(5) ul li a:hover img {
 
 .noGrid main section:nth-of-type(5) {
   display: flex;
-  flex-direction: row;
 }
 
 .noGrid main section:nth-of-type(7) p,
@@ -855,4 +853,70 @@ main:has(section#projects:target) section:nth-of-type(5) ul:nth-of-type(2) {
 
 main:has(section#projects:target) section:nth-of-type(5) h2 {
   flex: 1 0 60vw;
+}
+
+@media (aspect-ratio: 1) and (max-width:400px) {
+
+  main>section>* {
+    flex-direction: column !important;
+    gap: 1em !important;
+    flex-wrap: nowrap !important;
+  }
+
+  section>figure>* {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+  }
+
+  main>section:nth-of-type(2) ul li {}
+
+  main>section:first-of-type,
+  main>section:nth-of-type(2) {
+    flex: 1 1 100%;
+  }
+
+  main>section:first-of-type>ul {
+    margin-bottom: 6em;
+  }
+
+  main section:first-of-type>div {
+    text-align: center;
+  }
+
+  main>section:nth-of-type(3)>a {
+    flex: 1 1 100%;
+  }
+}
+
+@media (aspect-ratio: 1) and (max-width:400px) {
+
+  main>section>* {
+    flex-direction: column !important;
+    gap: 1em !important;
+    flex-wrap: nowrap !important;
+  }
+
+  section>figure>* {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+  }
+
+  main>section:nth-of-type(2) ul li {}
+
+  main>section:first-of-type,
+  main>section:nth-of-type(2) {
+    flex: 1 1 100%;
+  }
+
+  main>section:first-of-type>ul {
+    margin-bottom: 6em;
+  }
+
+  main section:first-of-type>div {
+    text-align: center;
+  }
+
+  main>section:nth-of-type(3)>a {
+    flex: 1 1 100%;
+  }
 }
